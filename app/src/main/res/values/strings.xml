@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ScaniaApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="scania">SCANIA</string>
+    <string name="feedback">Feedback</string>
+    <string name="personal_info_title">Informações pessoais</string>
+    <string name="name">Nome</string>
+    <string name="last_name">Sobrenome</string>
+    <string name="email_text">Email</string>
+    <string name="identification_text">Identificação</string>
+    <string name="next_step">Próximo passo</string>
+    <string name="cep_hint">Cep</string>
+    <string name="city_hint">Cidade</string>
+    <string name="state_hint">Estado</string>
+    <string name="district_hint">Bairro</string>
+    <string name="description_hint">Notou alguma diferença no veículo</string>
+    <string name="vehicle_info_text">Informações do veículo</string>
+    <string name="vehicle_type_hint">Modelo</string>
+    <string name="year_hint">Ano</string>
+    <string name="mileage_hint">Quilômetragem</string>
+    <string name="image_button_text">Anexo</string>
+    <string name="additional_info_text_title">Informações adicionais</string>
+    <string name="work_time_hint">Quanto tempo você trabalha na área?</string>
+    <string name="vehicle_time_hint">Quanto tempo possuí nosso veículo?</string>
+    <string name="path_travelad_text">Qual o trajeto mais percorrido?</string>
+    <string name="source_hint">Origem</string>
+    <string name="destiny_hint">Destino</string>
+    <string name="send_button_hint">Enviar</string>
+</resources>

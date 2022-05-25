@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="com.example.scaniaapp.splashscreen.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="com.example.scaniaapp.personalinfo.PersonalInfoFragment"
+        android:label="fragment_personal_info"
+        tools:layout="@layout/fragment_personal_info" >
+        <action
+            android:id="@+id/action_personalInfoFragment_to_secondPersonalInfoFragment"
+            app:destination="@id/secondPersonalInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondPersonalInfoFragment"
+        android:name="com.example.scaniaapp.secondpersonalinfo.SecondPersonalInfoFragment"
+        android:label="fragment_second_personl_info"
+        tools:layout="@layout/fragment_second_personl_info" >
+        <action
+            android:id="@+id/action_secondPersonalInfoFragment_to_vehicleInfoFragment"
+            app:destination="@id/vehicleInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehicleInfoFragment"
+        android:name="com.example.scaniaapp.vehicleinfo.VehicleInfoFragment"
+        android:label="fragment_vehicle_info"
+        tools:layout="@layout/fragment_vehicle_info" >
+        <action
+            android:id="@+id/action_vehicleInfoFragment_to_additionalInformationFragment"
+            app:destination="@id/additionalInformationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/additionalInformationFragment"
+        android:name="com.example.scaniaapp.additionalinformation.AdditionalInformationFragment"
+        android:label="fragment_additional_information"
+        tools:layout="@layout/fragment_additional_information" />
+</navigation>
