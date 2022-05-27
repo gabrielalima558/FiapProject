@@ -5,20 +5,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.scaniaapp.R
+import com.example.scaniaapp.databinding.FragmentSecondPersonlInfoBinding
 
 class SecondPersonalInfoFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private var _binding: FragmentSecondPersonlInfoBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_second_personl_info, container, false)
+        _binding = FragmentSecondPersonlInfoBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+        binding.nextStep.setOnClickListener {
+            findNavController().navigate(R.id.action_secondPersonalInfoFragment_to_vehicleInfoFragment)
+        }
+        return view
     }
 
 }
