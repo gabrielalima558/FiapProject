@@ -22,7 +22,7 @@ class SplashScreenFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         Handler(Looper.myLooper()!!).postDelayed({
-            findNavController().navigate(R.id.action_splashScreenFragment_to_personalInfoFragment)
+            findNavController().navigate(SplashScreenFragmentDirections.actionSplashScreenFragmentToPersonalInfoFragment())
         }, 5000)
         _binding = FragmentSplashScreenBinding.inflate(inflater, container, false)
         val view = binding.root

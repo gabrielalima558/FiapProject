@@ -21,7 +21,7 @@ class SecondPersonalInfoFragment : Fragment() {
         val view = binding.root
 
         binding.nextStep.setOnClickListener {
-            findNavController().navigate(R.id.action_secondPersonalInfoFragment_to_vehicleInfoFragment)
+            findNavController().navigate(SecondPersonalInfoFragmentDirections.actionSecondPersonalInfoFragmentToVehicleInfoFragment())
         }
         return view
     }

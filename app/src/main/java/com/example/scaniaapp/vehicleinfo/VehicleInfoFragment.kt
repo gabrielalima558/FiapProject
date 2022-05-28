@@ -22,7 +22,7 @@ class VehicleInfoFragment : Fragment() {
         val view = binding.root
 
         binding.nextStep.setOnClickListener {
-            findNavController().navigate(R.id.action_vehicleInfoFragment_to_additionalInformationFragment)
+            findNavController().navigate(VehicleInfoFragmentDirections.actionVehicleInfoFragmentToAdditionalInformationFragment())
         }
         return view
     }
