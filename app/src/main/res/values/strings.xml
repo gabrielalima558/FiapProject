@@ -27,4 +27,5 @@
     <string name="source_hint">Origem</string>
     <string name="destiny_hint">Destino</string>
     <string name="send_button_hint">Enviar</string>
+    <string name="without_feedback">Você ainda não cadastrou um feedback</string>
 </resources>

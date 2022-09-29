@@ -20,17 +20,11 @@
         android:label="fragment_personal_info"
         tools:layout="@layout/fragment_personal_info" >
         <action
-            android:id="@+id/action_personalInfoFragment_to_secondPersonalInfoFragment"
-            app:destination="@id/secondPersonalInfoFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/secondPersonalInfoFragment"
-        android:name="com.example.scaniaapp.secondpersonalinfo.SecondPersonalInfoFragment"
-        android:label="fragment_second_personl_info"
-        tools:layout="@layout/fragment_second_personl_info" >
-        <action
-            android:id="@+id/action_secondPersonalInfoFragment_to_vehicleInfoFragment"
+            android:id="@+id/action_personalInfoFragment_to_vehicleInfoFragment"
             app:destination="@id/vehicleInfoFragment" />
+        <action
+            android:id="@+id/action_personalInfoFragment_to_feedbackListFragment"
+            app:destination="@id/feedbackListFragment" />
     </fragment>
     <fragment
         android:id="@+id/vehicleInfoFragment"
@@ -38,12 +32,28 @@
         android:label="fragment_vehicle_info"
         tools:layout="@layout/fragment_vehicle_info" >
         <action
-            android:id="@+id/action_vehicleInfoFragment_to_additionalInformationFragment"
-            app:destination="@id/additionalInformationFragment" />
+            android:id="@+id/action_vehicleInfoFragment_to_feedbackListFragment"
+            app:destination="@id/feedbackListFragment" />
+        <argument
+            android:name="name"
+            app:nullable="false"
+            app:argType="string"
+            />
+        <argument
+            android:name="email"
+            app:nullable="false"
+            app:argType="string"
+            />
+        <argument
+            android:name="identification"
+            app:nullable="false"
+            app:argType="string"
+            />
     </fragment>
     <fragment
-        android:id="@+id/additionalInformationFragment"
-        android:name="com.example.scaniaapp.additionalinformation.AdditionalInformationFragment"
-        android:label="fragment_additional_information"
-        tools:layout="@layout/fragment_additional_information" />
+        android:id="@+id/feedbackListFragment"
+        android:name="com.example.scaniaapp.list.FeedbackListFragment"
+        android:label="fragment_feedback_list"
+        tools:layout="@layout/fragment_feedback_list" />
+
 </navigation>

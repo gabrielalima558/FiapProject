@@ -74,23 +74,13 @@
         />
 
     <Button
-        android:id="@+id/button_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/image_button_text"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_description" />
-
-    <Button
         android:id="@+id/next_step"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/next_step"
+        android:text="@string/send_button_hint"
         android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_image" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_description" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
