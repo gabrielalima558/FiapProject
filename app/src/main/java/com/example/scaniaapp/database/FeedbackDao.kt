@@ -1,10 +1,7 @@
 package com.example.scaniaapp.database
 
 import androidx.paging.PagingSource
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-
+import androidx.room.*
 
 @Dao
 interface FeedbackDao {
@@ -14,4 +11,9 @@ interface FeedbackDao {
     @Query("SELECT * FROM feedback_table ORDER BY person_name COLLATE NOCASE ASC")
     fun allTeam(): PagingSource<Int, Feedback>
 
+    @Delete
+    fun deleteItem(feedback: Feedback)
+
+    @Update
+    fun updateItem(feedback: Feedback)
 }
