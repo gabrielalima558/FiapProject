@@ -21,11 +21,10 @@ class FeedbackListViewModel(val dataSource: FeedbackDao) : ViewModel() {
             maxSize = 200
         )
     ) {
-        dataSource.allTeam()
+        dataSource.allFeedback()
     }.flow
         .map { pagingData ->
             pagingData
-                // Map cheeses to common UI model.
                 .map { cheese -> FeedbackListItem.Item(cheese) }
         }
         .cachedIn(viewModelScope)

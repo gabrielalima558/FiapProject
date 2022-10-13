@@ -7,10 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.paging.map
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.scaniaapp.database.Feedback
 import com.example.scaniaapp.database.FeedbackDatabase
 import com.example.scaniaapp.databinding.FragmentFeedbackListBinding
 import com.example.scaniaapp.list.adapter.FeedbackAdapter
@@ -37,8 +39,7 @@ class FeedbackListFragment : Fragment() {
         feedbackViewModel =
             ViewModelProvider(this, viewModelFactory).get(FeedbackListViewModel::class.java)
 
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -57,6 +58,16 @@ class FeedbackListFragment : Fragment() {
             feedbackViewModel.list.collectLatest { adapter.submitData(it.map { itens -> itens }) }
 
         }
+
+        adapter.setOnItemClickListener(object : FeedbackAdapter.OnItemClickListener {
+            override fun OnItemclick(position: Int, feedback: Feedback?) {
+                findNavController().navigate(
+                    FeedbackListFragmentDirections.actionFeedbackListFragmentToFeedbackDetailFragment(
+                        personName = feedback?.personName,
+                    )
+                )
+            }
+        })
     }
 
     private fun initSwipeToDelete() {
@@ -65,7 +76,7 @@ class FeedbackListFragment : Fragment() {
                 recyclerView: RecyclerView,
                 viewHolder: RecyclerView.ViewHolder
             ): Int {
-                val  feedbackViewHolder = viewHolder as FeedbackViewHolder
+                val feedbackViewHolder = viewHolder as FeedbackViewHolder
                 return if (feedbackViewHolder.feedback != null) {
                     makeMovementFlags(0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT)
                 } else {
@@ -73,9 +84,10 @@ class FeedbackListFragment : Fragment() {
                 }
             }
 
-            override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder,
-                                target: RecyclerView.ViewHolder): Boolean = false
-
+            override fun onMove(
+                recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder,
+                target: RecyclerView.ViewHolder
+            ): Boolean = false
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 (viewHolder as FeedbackViewHolder).feedback?.let {

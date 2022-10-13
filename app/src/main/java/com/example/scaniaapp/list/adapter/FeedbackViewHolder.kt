@@ -9,7 +9,7 @@ import com.example.scaniaapp.R
 import com.example.scaniaapp.database.Feedback
 
 
-class FeedbackViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
+class FeedbackViewHolder(parent: ViewGroup, listener: FeedbackAdapter.OnItemClickListener) : RecyclerView.ViewHolder(
     LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
 ) {
     var feedback: Feedback? = null
@@ -32,5 +32,11 @@ class FeedbackViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
         feedback = (item as? FeedbackListItem.Item)?.feedback
         nameView.text = item?.name
         description.text = item?.description
+    }
+
+    init {
+        itemView.setOnClickListener {
+            listener.OnItemclick(bindingAdapterPosition, feedback)
+        }
     }
 }

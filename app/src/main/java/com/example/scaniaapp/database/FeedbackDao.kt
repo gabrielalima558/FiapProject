@@ -9,7 +9,10 @@ interface FeedbackDao {
     fun insertFeedback(feedback: Feedback)
 
     @Query("SELECT * FROM feedback_table ORDER BY person_name COLLATE NOCASE ASC")
-    fun allTeam(): PagingSource<Int, Feedback>
+    fun allFeedback(): PagingSource<Int, Feedback>
+
+    @Query("SELECT * FROM feedback_table WHERE person_name = :personName")
+    fun getFeedback(personName: String?): Feedback?
 
     @Delete
     fun deleteItem(feedback: Feedback)

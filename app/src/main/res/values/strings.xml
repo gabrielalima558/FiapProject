@@ -28,4 +28,5 @@
     <string name="destiny_hint">Destino</string>
     <string name="send_button_hint">Enviar</string>
     <string name="without_feedback">Você ainda não cadastrou um feedback</string>
+    <string name="save_txt">Salvar</string>
 </resources>
